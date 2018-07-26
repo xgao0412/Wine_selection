@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="../d3.js"></script>
+    <script src='../jquery-1.11.3.js'></script>
+    <link rel="stylesheet" type="text/css" href="../jquery.fullpage.css" />
+    
+    
+    
+    <script type="text/javascript" src="../jquery.fullpage.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+    
+  <body>
+
+    <div id="navbar">
+      <a href="#page1">page1</a>
+      <a href="#page2">page2</a>
+      <a href="#page3">page3</a>
+      <a href="#page4">page4</a>
+    </div>
+
+    <div id='wrapper'>
+      <div class="section" data-anchor='page1' id="sheet1">
+        <div class="chartTitle"><h4>Scatter Plot</h4></div>
+        <div id="scatterPlot"></div>
+        <div class="textBox">some descption about scatter plot</div>   
+      </div>
+
+      <div class="section" data-anchor='page2' >
+        
+        <div id="barChart">
+          <div class="chartTitle"><h4>Bar Chart</h4></div>
+          <div id="bar-tooltip" class="hidden">
+
+          </div>  
+        </div>
+        <div class="chartTitle">heading</div>
+        <div class="textBox">abc</div>
+      </div>
+
+
+      <div class="section" data-anchor='page3'>
+        <div id="barChart1">
+          <div class="chartTitle"><h4>Bar Chart</h4></div>
+          <div id="bar-tooltip1" class="hidden">
+
+          </div>  
+        </div>
+        <div class="chartTitle">heading</div>
+        <div class="textBox">abc</div>
+      </div>
+
+      <div class="section" data-anchor='page4'>
+        <div id="barChart2">
+          <div class="chartTitle"><h4>Bar Chart</h4></div>
+          <div id="bar-tooltip2" class="hidden">
+
+          </div>  
+        </div>
+        <div class="chartTitle">heading</div>
+        <div class="textBox">abc</div>
+      </div>
+
+
+  </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#wrapper').fullpage({
+          scrollingSpeed:300,
+          loopBottom:true
+        });
+      });
+    </script>    
+
+    <script type="text/javascript" src="barChart.js"></script>
+    <script type="text/javascript" src="scatterPlot.js"></script>
+    <script type="text/javascript" src="barChart1.js"></script>
+    <script type="text/javascript" src="barChart2.js"></script>
+  </body>
+</html>

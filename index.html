@@ -1,18 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>D3 Page Template</title>
     <script type="text/javascript" src="../d3.js"></script>
+    <script src='../jquery-1.11.3.js'></script>
+    <link rel="stylesheet" type="text/css" href="../jquery.fullpage.css" />
+    
+    
+    
+    <script type="text/javascript" src="../jquery.fullpage.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
   </head>
+    
   <body>
+
+    <div id="navbar">
+      <a href="#page1"><font color='white'>Overview</font></a>
+      <a href="#page2"><font color='white'>Plot</font></a>
+      <a href="#page3"><font color='white'>About this Visualization</font></a>
+
+    </div>
+
+    <div id='wrapper'>
+      <div class="section" data-anchor='page1' id="sheet2">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div><h1>Wine review, price and selection</h1></div>
+        <div><h2>When you go to whole foods, which wine would you choose?</h2></div>
+        <div><h4>Wine is made virtually every country in the world. There are historic regions such as <strong>France</strong>,<strong>Italy</strong> and <strong>Germany</strong>. There are also some new regions such as <strong>US</strong>,<strong>Australia</strong> and <strong>Chile</strong> with hotter climates.<br><br>
+        The wine markets always seperate wines based on countries, it's hard to find a decent wine for a reasonable price, plus the promotion will make this choice even harder.<br>
+      At first glance, the Wines' labeling are always confusing to those who doesn't know any wine but invited to a party, you also don't wanna throw more money but ended up with a bad one.</h4></div>
+        <br>
+        <div><h2>What about this visualization?</h2></div>
+        <div><h4>
+        This visualization will help you decide the origin of the wine. The original data contains reviews and price. I also introduce a new factor called points per dollar to measure the qulity.</h4></div>
+
+      </div>
+
+      <div class="section" data-anchor='page2' id="sheet1">
+        <div id="scatterPlot"></div>
+        <br>
+        <br>
+        <p>In this visualization, the x axis shows the average price for a country's wine, the y axis shows the average reviews(total 100). 
+        <br><br>
+          This size of the circle is based on the review per price(points per dollar). This is an important factor for measuring wine quality.
+        <br><br>
+          When mouseover the circles, the points per dollar factor will show along with the country name. The similar color represents similar value of the factor. Interestingly, the 'old' regions like France, Italy, Germany show very high points per dollar ratio while Chile,Argentina,Greece deliver lower ppd product.
+
+        <br><br>
+          When click on the legend, the specific country data will be filtered out; The data will be reset if click the same country again.
+
+        </p>   
+         <br>
+         <br>
+         <br>
+         <br>
+      </div>
+
+
+
+
+      <div class="section" data-anchor='page3' id="'sheet3">
+          <p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">About this visualization<br/></p> 
+          <p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Scenes</p>
+          <p >This project was created as slides using FullPage.js library.The first scene explains what to expect for this visualization. The second scene introduces how to use the graph. This method can  guarantee visual consistency.</p>
+          <p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Annotations</p>
+          <p > The annotation is represented by the legend at the bottom of the graph. The graph also has tooltips when hovering over the data points. The tooltips will disappear when mouseout.</p>
+
+          <p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Parameters</p>
+          <p >In the graph, the country is the parameter for filtering data, the circle is another one for different color as similar color represents similar size of circle.</p>
+
+          <p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Triggers</p>
+          <p >  The graph change will be triggered when users click on the legend. The graph can be reset if the user click sagain on the same country. The slide change can be triggered when click on the navigation bar in the first scene.  </p>
+
+        </div>
+      </div>
+  </div>
+
     <script type="text/javascript">
-      //your d3 code will go here
-      d3.select('body').append('p').text('new paragraph')
-    </script>
-    <h1>HAHAHA</h1>
-    <p>testing git push</p>
-    <p> testing again</p>
+      $(document).ready(function(){
+        $('#wrapper').fullpage({
+          scrollingSpeed:300,
+          loopBottom:true
+        });
+      });
+    </script>    
+
+
+    <script type="text/javascript" src="scatterPlot.js"></script>
+
   </body>
 </html>
-
